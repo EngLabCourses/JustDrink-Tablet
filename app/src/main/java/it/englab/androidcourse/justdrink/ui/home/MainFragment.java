@@ -92,11 +92,9 @@ public class MainFragment extends Fragment implements ClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_grid:
-                Log.i("", "onOptionsItemSelected: "+R.id.action_grid);
                 mRecyclerView.setLayoutManager(new GridLayoutManager(mRecyclerView.getContext(),2,GridLayoutManager.VERTICAL,false));
                 return true;
             case R.id.action_list:
-                Log.i("", "onOptionsItemSelected: "+R.id.action_list);
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext(), LinearLayoutManager.VERTICAL, false));
                 return true;
         }
