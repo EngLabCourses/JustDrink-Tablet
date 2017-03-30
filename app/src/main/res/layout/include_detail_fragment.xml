@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/label_ingredients"
         android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_micro" />
 
     <TextView
@@ -64,5 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/label_instructions"
         android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_micro" />
 </RelativeLayout>

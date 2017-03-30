@@ -1,5 +1,6 @@
 package it.englab.androidcourse.justdrink.ui.home;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements DrinkListener {
         if (detailContainer != null) //detailContainer non è null, dunque stiamo utilizzando il layout land
             isHorizontal = true;
 
-        getFragmentManager().beginTransaction().replace(R.id.main_container, MainFragment.newInstance(isHorizontal)).commit();
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.main_container, ListFragment.newInstance(isHorizontal)).commit();
     }
 
     @Override

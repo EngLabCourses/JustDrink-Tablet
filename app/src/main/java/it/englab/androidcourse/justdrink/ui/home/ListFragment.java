@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,9 +26,9 @@ import it.englab.androidcourse.justdrink.utils.JsonUtil;
  * Created by Peppe on 07/02/2017.
  */
 
-public class MainFragment extends Fragment implements ClickListener {
+public class ListFragment extends Fragment implements ClickListener {
 
-    private static final String HORIZONTAL_VALUE = MainFragment.class.getPackage() + ".HORIZONTAL_VALUE";
+    private static final String HORIZONTAL_VALUE = ListFragment.class.getPackage() + ".HORIZONTAL_VALUE";
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -37,11 +36,11 @@ public class MainFragment extends Fragment implements ClickListener {
     private DrinkListener listener;
     private boolean isHorizontal;
 
-    public static MainFragment newInstance(boolean horizontal) {
+    public static ListFragment newInstance(boolean horizontal) {
         Bundle args = new Bundle();
         args.putBoolean(HORIZONTAL_VALUE, horizontal);
 
-        MainFragment fragment = new MainFragment();
+        ListFragment fragment = new ListFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -107,8 +106,8 @@ public class MainFragment extends Fragment implements ClickListener {
         attachListener(context);
     }
 
-    /*Nonostante il metodo onAttach(Activity) sia deprecato, è necessario mantenerlo per ragioni
-      di retrocompatibilità*/
+    /*Il metodo onAttach(Activity) è deprecato dalla v23, quindi conviene mantenerlo per ragioni
+      di retrocompatibilità */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -117,7 +116,7 @@ public class MainFragment extends Fragment implements ClickListener {
 
     /**
      *  Il metodo attachListener inizializza l'attributo listener, o lancia un'eccezione indicando
-     *  che l'activity che contiene il MainFragment deve implementare l'interfaccia DrinkListener
+     *  che l'activity che contiene il ListFragment deve implementare l'interfaccia DrinkListener
      *
      * @param context Context
      */
